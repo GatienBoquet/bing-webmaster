@@ -1,0 +1,4 @@
+interface:
+  display_name: "Bing Webmaster"
+  short_description: "Bing Webmaster API workflows"
+  default_prompt: "Use $bing-webmaster to audit Bing indexing, traffic, crawl issues, and URL submissions for my site."
