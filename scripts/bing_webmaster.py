@@ -296,7 +296,7 @@ def build_parser() -> argparse.ArgumentParser:
 def read_batch_urls(args: argparse.Namespace) -> list[str]:
     urls = list(args.url)
     if args.url_file:
-        with open(args.url_file, encoding="utf-8") as fh:
+        with open(args.url_file, encoding="utf-8-sig") as fh:
             urls.extend(line.strip() for line in fh if line.strip() and not line.lstrip().startswith("#"))
     if not urls:
         raise BingWebmasterError("submit-batch needs at least one --url or a --url-file.")

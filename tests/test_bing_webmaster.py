@@ -123,6 +123,14 @@ class BatchTests(unittest.TestCase):
         self.assertEqual(code, 0)
         self.assertEqual(json.loads(out)["body"]["urlList"], [SITE + "a", SITE + "b"])
 
+    def test_batch_file_with_bom(self) -> None:
+        with tempfile.NamedTemporaryFile("w", suffix=".txt", delete=False, encoding="utf-8-sig") as fh:
+            fh.write(f"{SITE}a\n{SITE}b\n")
+        self.addCleanup(os.unlink, fh.name)
+        code, out, _, _ = run(["submit-batch", "--site-url", SITE, "--url-file", fh.name, "--dry-run"])
+        self.assertEqual(code, 0)
+        self.assertEqual(json.loads(out)["body"]["urlList"], [SITE + "a", SITE + "b"])
+
     def test_batch_limit(self) -> None:
         argv = ["submit-batch", "--site-url", SITE, "--dry-run"]
         for i in range(bw.MAX_BATCH_URLS + 1):
