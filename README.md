@@ -1,8 +1,12 @@
-# Bing Webmaster Codex Skill
+# Bing Webmaster Agent Skill
 
-Use Microsoft Bing Webmaster Tools from Codex to audit Bing SEO visibility, crawl issues, URL index status, search traffic, sitemap feeds, and URL submissions.
+~~~bash
+npx skills add GatienBoquet/bing-webmaster
+~~~
 
-This repository packages a reusable Codex skill plus a small Python helper for the official Bing Webmaster API. It is designed for SEO operators, site owners, and AI coding agents that need repeatable Bing Webmaster evidence instead of manual portal screenshots.
+Use Microsoft Bing Webmaster Tools from your AI coding agent (Claude Code, Codex, Cursor, GitHub Copilot, and [more](https://skills.sh)) to audit Bing SEO visibility, crawl issues, URL index status, search traffic, sitemap feeds, and URL submissions.
+
+This repository packages a reusable [Agent Skill](https://skills.sh) plus a small Python helper for the official Bing Webmaster API. It is designed for SEO operators, site owners, and AI coding agents that need repeatable Bing Webmaster evidence instead of manual portal screenshots.
 
 ## What This Skill Does
 
@@ -23,13 +27,14 @@ This repository packages a reusable Codex skill plus a small Python helper for t
 - URL indexing checks
 - Sitemap and feed submission workflows
 - Comparing Bing Webmaster Tools data with Google Search Console
-- Agent-ready website diagnostics in Codex
+- Agent-ready website diagnostics in Claude Code, Codex, Cursor, and other agents
 
 ## Repository Contents
 
 ~~~text
 .
 |-- SKILL.md
+|-- LICENSE
 |-- agents/
 |   `-- openai.yaml
 |-- references/
@@ -42,7 +47,17 @@ This repository packages a reusable Codex skill plus a small Python helper for t
 
 ## Install The Skill
 
-Clone or copy this folder into your Codex skills directory:
+Install with the [skills CLI](https://github.com/vercel-labs/skills), which works with Claude Code, Codex, Cursor, and many other agents:
+
+~~~bash
+npx skills add GatienBoquet/bing-webmaster
+~~~
+
+Add `-g` to install for your user instead of the current project, or `-a claude-code` / `-a codex` to pick an agent.
+
+### Manual install (Codex)
+
+Clone this repository into your Codex skills directory:
 
 ~~~powershell
 git clone https://github.com/GatienBoquet/bing-webmaster.git "$env:USERPROFILE\.codex\skills\bing-webmaster"
@@ -54,11 +69,13 @@ On macOS or Linux:
 git clone https://github.com/GatienBoquet/bing-webmaster.git ~/.codex/skills/bing-webmaster
 ~~~
 
-Then invoke it in Codex:
+Then invoke it in your agent, for example in Codex:
 
 ~~~text
 Use $bing-webmaster to audit Bing crawl issues and traffic for https://example.com/
 ~~~
+
+In Claude Code, ask for a Bing Webmaster task and the skill loads automatically, or run `/bing-webmaster`.
 
 ## Connect Bing Webmaster Tools
 
@@ -165,4 +182,8 @@ python3 -m unittest discover -s tests
 
 ## Keywords
 
-Bing Webmaster API, Bing Webmaster Tools, Codex skill, SEO audit, technical SEO, crawl issues, URL indexing, URL submission, sitemap submission, search traffic, webmaster tools automation, Microsoft Bing SEO.
+Bing Webmaster API, Bing Webmaster Tools, agent skill, Agent Skills, Claude Code skill, Codex skill, SEO audit, technical SEO, crawl issues, URL indexing, URL submission, sitemap submission, search traffic, webmaster tools automation, Microsoft Bing SEO.
+
+## License
+
+[MIT](LICENSE)

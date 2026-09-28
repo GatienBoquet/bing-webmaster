@@ -1,6 +1,7 @@
 ---
 name: bing-webmaster
 description: Use this skill when working with Microsoft Bing Webmaster Tools or Bing Webmaster API tasks, including checking verified sites, traffic and ranking stats, crawl issues, URL index status, inbound links, sitemap/feed submission, URL submission, URL submission quotas, OAuth/API-key setup, or comparing Bing SEO evidence with Search Console data.
+license: MIT
 ---
 
 # Bing Webmaster
@@ -62,7 +63,7 @@ python3 scripts/bing_webmaster.py submit-url --site-url "https://example.com/" -
 python3 scripts/bing_webmaster.py submit-url --site-url "https://example.com/" --url "https://example.com/page" --allow-write
 ```
 
-If Python is not on PATH in Codex Desktop, use the bundled runtime path from `codex_app__load_workspace_dependencies`.
+If `python` is not on PATH, try `python3`. In Codex Desktop, use the bundled runtime path from `codex_app__load_workspace_dependencies`.
 
 ## Authentication
 
